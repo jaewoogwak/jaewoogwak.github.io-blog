@@ -3,7 +3,7 @@ module.exports = {
     title: `Jaewoo.log`,
     author: {
       name: `jaewoo gwak`,
-      summary: `Hi there.`,
+      summary: `Jaewoogwak : 프론트엔드 개발 블로그`,
     },
     description: `프론트엔드 개발 블로그`,
     siteUrl: `https://jaewoogwak/jaewoogwak.github.io/`,
