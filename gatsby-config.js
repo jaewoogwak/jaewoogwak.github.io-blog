@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Jaewoo.log`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `jaewoo gwak`,
+      summary: `Jaewoogwak : 프론트엔드 개발 블로그`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `프론트엔드 개발 블로그`,
+    siteUrl: `https://jaewoogwak.netlify.app`,
     social: {
-      twitter: `kylemathews`,
+      instagram: "jaewoogwak",
     },
   },
   plugins: [
