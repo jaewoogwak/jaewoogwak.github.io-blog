@@ -5,11 +5,16 @@ import GithubIcon from "./githubIcon"
 import MailIcon from "./mailIcon"
 import styled from "styled-components"
 // test
+const Wrapper = styled.div`
+  /* border-bottom: 1px solid gray;
+  padding-bottom: 1rem; */
+`
 const IconWrapper = styled.div`
   display: flex;
   gap: 0.5rem;
   padding-top: 0.5rem;
 `
+
 const Bio = () => {
   const data = useStaticQuery(graphql`
     query BioQuery {
@@ -32,7 +37,7 @@ const Bio = () => {
   const social = data.site.siteMetadata?.social
 
   return (
-    <div className="bio">
+    <Wrapper className="bio">
       <StaticImage
         className="bio-avatar"
         layout="fixed"
@@ -56,7 +61,7 @@ const Bio = () => {
           <MailIcon />
         </IconWrapper>
       </div>
-    </div>
+    </Wrapper>
   )
 }
 
