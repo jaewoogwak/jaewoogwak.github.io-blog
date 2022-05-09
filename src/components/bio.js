@@ -1,5 +1,5 @@
 import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import GithubIcon from "./githubIcon"
 import MailIcon from "./mailIcon"
@@ -37,7 +37,7 @@ const Bio = () => {
   const social = data.site.siteMetadata?.social
 
   return (
-    <Wrapper className="bio">
+    <Wrapper className="bio" style={{ marginBottom: "50px" }}>
       <StaticImage
         className="bio-avatar"
         layout="fixed"
@@ -60,6 +60,7 @@ const Bio = () => {
           <GithubIcon />
           <MailIcon />
         </IconWrapper>
+        <Link to="/posts">All posts</Link>
       </div>
     </Wrapper>
   )

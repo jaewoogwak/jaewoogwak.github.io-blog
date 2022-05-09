@@ -5,6 +5,8 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import styled from "styled-components"
+import CategoryBar from "../components/categoryBar"
+import TagsPage from "../templates/tags"
 
 const Wrapper = styled.li`
   border-top: 0.5px solid gray;
@@ -29,6 +31,7 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
       <Bio />
+      <CategoryBar />
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           console.log("post frontmatter", post.frontmatter)
@@ -76,6 +79,10 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      group(field: frontmatter___tags) {
+        tag: fieldValue
+        totalCount
+      }
       nodes {
         excerpt
         fields {
@@ -85,7 +92,8 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
-          tag
+          category
+          tags
         }
       }
     }

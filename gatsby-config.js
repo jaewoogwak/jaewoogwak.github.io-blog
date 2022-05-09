@@ -68,6 +68,8 @@ module.exports = {
                 description
                 siteUrl
                 site_url: siteUrl
+                tags
+                category
               }
             }
           }
@@ -99,7 +101,8 @@ module.exports = {
                     frontmatter {
                       title
                       date
-                      tag
+                      category
+                      tags
                     }
                   }
                 }
