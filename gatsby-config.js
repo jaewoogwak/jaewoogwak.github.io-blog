@@ -68,7 +68,6 @@ module.exports = {
                 description
                 siteUrl
                 site_url: siteUrl
-                category
               }
             }
           }
