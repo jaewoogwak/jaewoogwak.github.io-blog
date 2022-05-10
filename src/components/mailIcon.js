@@ -1,8 +1,10 @@
 import React from "react"
 import styled from "styled-components"
 const Wrapper = styled.div`
+  width: 26px;
   :hover {
     opacity: 0.5;
+    background-color: black;
   }
 `
 const MailIcon = () => {
