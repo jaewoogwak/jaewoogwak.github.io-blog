@@ -3,7 +3,7 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 
-import IconBar from "./IconBar"
+import IconBar from "./iconBar"
 // test
 const Wrapper = styled.div`
   display: flex;
