@@ -11,8 +11,8 @@ const Wrapper = styled.div`
   height: 56px;
   padding-left: 20px;
   padding-right: 20px;
+
   background-color: #f4f7f8;
-  background-color: aqua;
 `
 
 const CategoryBar = () => {

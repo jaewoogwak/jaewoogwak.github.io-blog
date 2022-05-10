@@ -1,21 +1,23 @@
 import * as React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-import GithubIcon from "./githubIcon"
-import MailIcon from "./mailIcon"
 import styled from "styled-components"
+
+import IconBar from "./iconBar"
 // test
 const Wrapper = styled.div`
-  /* border-bottom: 1px solid gray;
-  padding-bottom: 1rem; */
-`
-const IconWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  gap: 0.5rem;
-  padding-top: 0.5rem;
 `
-
+const Box = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+const FlexBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`
 const Bio = () => {
   const data = useStaticQuery(graphql`
     query BioQuery {
@@ -49,20 +51,20 @@ const Bio = () => {
         quality={95}
         alt="Profile picture"
       />
-      <div>
-        {author?.name && (
-          <div>
-            {author?.summary || null}
-            {` `}
-          </div>
-        )}
-
-        <IconWrapper>
-          <GithubIcon />
-          <MailIcon />
-        </IconWrapper>
-        <Link to="/posts">All posts</Link>
-      </div>
+      <Box>
+        <div>
+          {author?.name && (
+            <div>
+              {author?.summary || null}
+              {` `}
+            </div>
+          )}
+        </div>
+        <FlexBox>
+          <IconBar />
+          <Link to="/posts">All posts</Link>
+        </FlexBox>
+      </Box>
     </Wrapper>
   )
 }

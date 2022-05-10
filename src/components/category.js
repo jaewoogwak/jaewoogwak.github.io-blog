@@ -25,11 +25,9 @@ const Text = styled.span`
 
 const Category = ({ text }) => {
   return (
-    <div>
-      <CategoryBtn>
-        <Text>{text}</Text>
-      </CategoryBtn>
-    </div>
+    <CategoryBtn>
+      <Text>{text}</Text>
+    </CategoryBtn>
   )
 }
 
