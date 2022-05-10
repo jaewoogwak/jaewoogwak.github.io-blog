@@ -8,6 +8,9 @@ import kebabCase from "lodash/kebabCase"
 import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
+import Seo from "../components/seo"
+import Bio from "../components/bio"
+import CategoryBar from "../components/categorybar"
 
 const TagsPage = ({
   data: {
@@ -23,6 +26,7 @@ const TagsPage = ({
       <Helmet title={title} />
       <div>
         <h1>Tags</h1>
+
         <ul>
           {group.map(tag => (
             <li key={tag.fieldValue}>
@@ -62,6 +66,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        description
       }
     }
     allMarkdownRemark(limit: 2000) {

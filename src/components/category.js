@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 
@@ -11,6 +10,7 @@ const CategoryBtn = styled.span`
   text-align: center;
   align-items: center;
   background-color: white;
+
   :hover {
     border: 2px solid black;
   }
@@ -21,6 +21,7 @@ const Text = styled.span`
   padding-right: 15px;
   text-align: center;
   font-weight: 700;
+  text-decoration: none;
 `
 
 const Category = ({ text }) => {

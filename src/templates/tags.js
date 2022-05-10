@@ -1,36 +1,73 @@
 import React from "react"
 import PropTypes from "prop-types"
-
-// Components
 import { Link, graphql } from "gatsby"
-
-const Tags = ({ pageContext, data }) => {
+import styled from "styled-components"
+import Layout from "../components/layout"
+import Seo from "../components/seo"
+import Bio from "../components/bio"
+import CategoryBar from "../components/categorybar"
+const Wrapper = styled.li`
+  border-top: 0.5px solid gray;
+  padding-bottom: 1.5rem;
+`
+const Tags = ({ pageContext, data, location }) => {
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
+  console.log("data2", data)
+  const siteTitle = data.site.siteMetadata?.title || `Title`
+  console.log("data", data)
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? "" : "s"
   } tagged with "${tag}"`
 
   return (
-    <div>
-      <h1>{tagHeader}</h1>
-      <ul>
+    <Layout location={location} title={siteTitle}>
+      <Seo title="All posts" />
+      <Bio />
+      <CategoryBar data={data} />
+      <ol style={{ listStyle: `none` }}>
         {edges.map(({ node }) => {
           const { slug } = node.fields
           const { title } = node.frontmatter
+          const { date } = node.frontmatter
+          const { description } = node.frontmatter
           return (
-            <li key={slug}>
-              <Link to={slug}>{title}</Link>
-            </li>
+            <Wrapper key={slug}>
+              <article
+                className="post-list-item"
+                itemScope
+                itemType="http://schema.org/Article"
+              >
+                <header>
+                  <h2>
+                    {" "}
+                    <Link to={slug}>
+                      {" "}
+                      <span itemProp="headline">{title}</span>
+                    </Link>
+                  </h2>
+                  <small>{date}</small>
+                </header>
+                <section>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: description,
+                    }}
+                    itemProp="description"
+                  />
+                </section>
+              </article>
+            </Wrapper>
           )
         })}
-      </ul>
+      </ol>
+
       {/*
               This links to a page that does not yet exist.
               You'll come back to it!
             */}
       <Link to="/tags">All tags</Link>
-    </div>
+    </Layout>
   )
 }
 
@@ -61,6 +98,11 @@ export default Tags
 
 export const pageQuery = graphql`
   query ($tag: String) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
@@ -74,6 +116,9 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
+            date
+            description
+            category
           }
         }
       }

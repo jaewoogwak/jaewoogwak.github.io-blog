@@ -62,7 +62,6 @@ const Bio = () => {
         </div>
         <FlexBox>
           <IconBar />
-          <Link to="/posts">All posts</Link>
         </FlexBox>
       </Box>
     </Wrapper>

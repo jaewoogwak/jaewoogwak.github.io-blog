@@ -30,7 +30,7 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
       <Bio />
-      <CategoryBar />
+      <CategoryBar data={data} />
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           console.log("post frontmatter", post.frontmatter)
