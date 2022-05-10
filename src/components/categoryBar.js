@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
-import Category from "./category"
+// Category from "./category"
 
 const Wrapper = styled.div`
   display: flex;
@@ -16,13 +16,7 @@ const Wrapper = styled.div`
 `
 
 const CategoryBar = () => {
-  return (
-    <Wrapper>
-      <Category text="React" />
-      <Category text="Diary" />
-      <Category text="test" />
-    </Wrapper>
-  )
+  return <Wrapper></Wrapper>
 }
 
 export default CategoryBar
