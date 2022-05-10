@@ -5,7 +5,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import styled from "styled-components"
-import CategoryBar from "../components/categoryBar"
+import CategoryBar from "../components/categorybar"
 
 const Wrapper = styled.li`
   border-top: 0.5px solid gray;
