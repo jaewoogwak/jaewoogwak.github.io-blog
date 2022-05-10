@@ -5,7 +5,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import styled from "styled-components"
-import CategoryBar from "../components/categoryBar"
+import CategoryBar from "../components/CategoryBar"
 import TagsPage from "../templates/tags"
 
 const Wrapper = styled.li`

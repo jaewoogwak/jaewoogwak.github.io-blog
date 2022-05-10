@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
-import Category from "./category"
+import Category from "./Category"
 
 const Wrapper = styled.div`
   display: flex;
