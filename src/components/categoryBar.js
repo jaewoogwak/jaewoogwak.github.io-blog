@@ -16,12 +16,10 @@ const Wrapper = styled.div`
 
 const CategoryBar = () => {
   return (
-    <div>
-      <Wrapper>
-        <Category text="React" />
-        <Category text="Diary" />
-      </Wrapper>
-    </div>
+    <Wrapper>
+      <Category text="React" />
+      <Category text="Diary" />
+    </Wrapper>
   )
 }
 
