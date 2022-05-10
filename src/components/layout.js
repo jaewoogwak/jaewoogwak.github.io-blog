@@ -1,6 +1,5 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import Category from "./category"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
