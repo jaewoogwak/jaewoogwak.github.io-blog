@@ -12,6 +12,7 @@ const Wrapper = styled.div`
   padding-left: 20px;
   padding-right: 20px;
   background-color: #f4f7f8;
+  background-color: aqua;
 `
 
 const CategoryBar = () => {
@@ -19,6 +20,7 @@ const CategoryBar = () => {
     <Wrapper>
       <Category text="React" />
       <Category text="Diary" />
+      <Category text="test" />
     </Wrapper>
   )
 }

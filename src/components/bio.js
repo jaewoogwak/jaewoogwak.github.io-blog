@@ -11,6 +11,7 @@ const Wrapper = styled.div`
 `
 const IconWrapper = styled.div`
   display: flex;
+  flex-direction: row;
   gap: 0.5rem;
   padding-top: 0.5rem;
 `
