@@ -1,5 +1,5 @@
 import { Link, graphql } from "gatsby"
-import React from "react"
+import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import Category from "./category"
 
@@ -13,38 +13,37 @@ const Wrapper = styled.div`
   padding-right: 20px;
   background-color: #f4f7f8;
 `
-const CategoryBar = ({ data }) => {
-  const { nodes } = data.allMarkdownRemark
-  const tmp = nodes?.map(item => {
-    console.log("category", item.frontmatter.category)
-    const { category } = item.frontmatter
-    return category
-  })
-  const categoryList = Array.from(new Set(tmp))
-  console.log(categoryList)
-  console.log("Data's category list in CategoryBar", categoryList)
+const CategoryBar = ({ data, tags }) => {
+  let tagList = []
+  tags?.forEach((tag, idx) => localStorage.setItem(idx, tag.toLowerCase()))
+
+  if (tags) localStorage.setItem("len", tags.length)
+  let list = []
+
+  for (let i = 0; i < localStorage.getItem("len"); i++) {
+    list.push(localStorage.getItem(i))
+  }
+  tagList = [].concat(list)
+
   return (
     <Wrapper>
-      {/* {categoryList.map((category, idx) => {
-        return (
-          <Link
-            key={idx}
-            to={`/tags/${category.toLowerCase()}`}
-            style={{ textDecorationLine: "none" }}
-          >
-            <Category text={category} />
+      {(tags || tagList)
+        .map((category, idx) => {
+          return (
+            <Link
+              key={idx + 1}
+              to={`/tags/${category.toLowerCase()}`}
+              style={{ textDecorationLine: "none" }}
+            >
+              <Category text={category} />
+            </Link>
+          )
+        })
+        .concat(
+          <Link key={0} to="/" style={{ textDecorationLine: "none" }}>
+            <Category text="All posts" />
           </Link>
-        )
-      })} */}
-      <Link to="/tags/react" style={{ textDecorationLine: "none" }}>
-        <Category text="React" />
-      </Link>
-      <Link to="/tags/diary" style={{ textDecorationLine: "none" }}>
-        <Category text="Diary" />
-      </Link>
-      <Link to="/" style={{ textDecorationLine: "none" }}>
-        <Category text="All posts" />
-      </Link>
+        )}
     </Wrapper>
   )
 }

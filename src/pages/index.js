@@ -15,7 +15,9 @@ const Wrapper = styled.li`
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
-
+  let tmp = []
+  posts.map(post => tmp.push(post.frontmatter.category))
+  const tags = Array.from(new Set(tmp))
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
@@ -30,10 +32,9 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
       <Bio />
-      <CategoryBar data={data} />
+      <CategoryBar data={data} tags={tags} />
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
-          console.log("post frontmatter", post.frontmatter)
           const title = post.frontmatter.title || post.fields.slug
 
           return (

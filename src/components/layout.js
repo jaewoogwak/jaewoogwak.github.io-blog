@@ -3,7 +3,6 @@ import { Link } from "gatsby"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
-  console.log("location.pathname.slice(/)[1]", location.pathname.substr(1, 4))
   const isRootPath = location.pathname === rootPath
   const isTagPagePath = location.pathname.substr(1, 4) === "tags"
   let header

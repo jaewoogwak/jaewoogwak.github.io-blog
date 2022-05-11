@@ -13,9 +13,7 @@ const Wrapper = styled.li`
 const Tags = ({ pageContext, data, location }) => {
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
-  console.log("data2", data)
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  console.log("data", data)
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? "" : "s"
   } tagged with "${tag}"`
