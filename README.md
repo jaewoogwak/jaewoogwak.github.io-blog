@@ -1,3 +1,3 @@
-# Jaewoo.log
+# @Jaewoo.log
 
-https://jaewoogwak.netlify.app/
+
