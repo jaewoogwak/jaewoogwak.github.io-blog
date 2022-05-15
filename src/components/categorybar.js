@@ -15,7 +15,7 @@ const Wrapper = styled.div`
 `
 const CategoryBar = ({ data, tags }) => {
   let tagList = ["diary"]
-  tags?.forEach((tag, idx) => localStorage.setItem(idx, tag.toLowerCase()))
+  //tags?.forEach((tag, idx) => localStorage.setItem(idx, tag.toLowerCase()))
 
   // if (tags) localStorage.setItem("len", tags.length)
   // let list = []
