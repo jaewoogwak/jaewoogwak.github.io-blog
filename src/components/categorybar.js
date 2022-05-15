@@ -14,16 +14,16 @@ const Wrapper = styled.div`
   background-color: #f4f7f8;
 `
 const CategoryBar = ({ data, tags }) => {
-  let tagList = []
+  let tagList = ["diary"]
   tags?.forEach((tag, idx) => localStorage.setItem(idx, tag.toLowerCase()))
 
-  if (tags) localStorage.setItem("len", tags.length)
-  let list = []
+  // if (tags) localStorage.setItem("len", tags.length)
+  // let list = []
 
-  for (let i = 0; i < localStorage.getItem("len"); i++) {
-    list.push(localStorage.getItem(i))
-  }
-  tagList = [].concat(list)
+  // for (let i = 0; i < localStorage.getItem("len"); i++) {
+  //   list.push(localStorage.getItem(i))
+  // }
+  // tagList = [].concat(list)
 
   return (
     <Wrapper>

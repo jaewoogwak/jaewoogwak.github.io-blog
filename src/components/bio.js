@@ -62,6 +62,7 @@ const Bio = () => {
         </div>
         <FlexBox>
           <IconBar />
+          <Link to="/tags">All tags</Link>
         </FlexBox>
       </Box>
     </Wrapper>

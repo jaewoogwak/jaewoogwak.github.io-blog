@@ -64,7 +64,6 @@ const Tags = ({ pageContext, data, location }) => {
               This links to a page that does not yet exist.
               You'll come back to it!
             */}
-      <Link to="/tags">All tags</Link>
     </Layout>
   )
 }
@@ -114,7 +113,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
-            date
+            date(formatString: "MMMM DD, YYYY")
             description
             category
           }
