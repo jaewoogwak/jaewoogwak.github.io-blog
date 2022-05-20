@@ -14,7 +14,7 @@ const Wrapper = styled.div`
   background-color: #f4f7f8;
 `
 const CategoryBar = ({ data, tags }) => {
-  let tagList = ["diary"]
+  let tagList = ["javascript", "diary"]
   //tags?.forEach((tag, idx) => localStorage.setItem(idx, tag.toLowerCase()))
 
   // if (tags) localStorage.setItem("len", tags.length)
@@ -32,7 +32,7 @@ const CategoryBar = ({ data, tags }) => {
           return (
             <Link
               key={idx + 1}
-              to={`/tags/${category.toLowerCase()}`}
+              to={`/tags/${category?.toLowerCase()}`}
               style={{ textDecorationLine: "none" }}
             >
               <Category text={category} />
